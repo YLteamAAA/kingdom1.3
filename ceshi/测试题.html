@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<ul id="oul">
+    <li class="li"><button>点我啊</button></li>
+    <li class="li"><button>点我啊</button></li>
+    <li class="li"><button>点我啊</button></li>
+</ul>
+<body>
+<script>
+    var oul=document.getElementById('oul');
+	var lis= oul.getElementsByTagName("li");
+for(var i=0;i<lis.length;i++){
+lis[i].onclick=function(){
+console.log(i);
+}
+}
+</script>
+</body>
+</html>
