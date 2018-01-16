@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>王国绘画学院</title>
+    <link rel="stylesheet" href="css/common.css">
+    <script src="js/jquery-3.2.1.js"></script>
+    <style>
+        /*网页头部*/
+        .header {
+            width: 100%;
+            background-color: #222222;
+        }
+        /*头部上*/
+        .header .h_header {
+            /*background-color: #ff333e;*/
+            width: 1200px;
+            height: 60px;
+            margin: 0 auto;
+        }
+        .header .h_header h1{
+            display: inline-block;
+            float: left;
+            width: 150px;
+            height: 60px;
+            line-height: 90px;
+            /*background-color: #32ff35;*/
+            cursor: pointer;
+        }
+        .header .h_header h1 img{
+            width: 100%;
+        }
+        .header .h_header .h_menu {
+            margin-left: 20px;
+            float: left;
+            /*background-color: #ff18e7;*/
+        }
+        .header .h_header .h_menu ul>li{
+            float: left;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            transition: 0.5s all;
+        }
+        .header .h_header .h_menu ul>li:hover {
+            /*box-shadow: 5px 0 20px 30px black inset;*/
+            background-color: black;
+        }
+        .header .h_header .h_menu ul li a{
+            padding-left: 20px;
+            padding-right: 20px;
+            color: #fdfdfe;
+            font-size:14px;
+            font-weight: 500;
+        }
+        .header .h_header .h_btn {
+            float: right;
+            width: 200px;
+            height: 60px;
+            text-align: center;
+            /*background-color: #e4ff4e;*/
+        }
+        .header .h_header .h_btn span{
+            line-height: 60px;
+            width: 100px;
+            height: 60px;
+            padding: 6px 25px;
+            border: 1px solid #fdfdfe;
+            border-radius: 20px;
+            margin-left: 5px;
+            transition: all 0.4s;
+        }
+        .header .h_header .h_btn span:hover {
+            background-color: #fff;
+        }
+        .header .h_header .h_btn span:hover a{
+            color: #222222;
+        }
+        .header .h_header .h_btn span a{
+            display: inline-block;
+            color: #fdfdfe;
+        }
+        /*头部中*/
+        .header .h_content {
+            width: 1200px;
+            height: 530px;
+            margin: 0 auto;
+            background: url(images/148524696163722.jpg) no-repeat;
+            background-size: auto 530px;
+            background-color: #fff;
+        }
+        /*蒙版和文字*/
+        .header .h_content .details {
+            float: right;
+            width: 520px;
+            height: 100%;
+            background-color: rgba(53,53,53,0.8);
+            color: #fdfdfe;
+            padding: 40px;
+            right: -520px;
+            box-sizing: border-box;
+        }
+        .header .h_content .details h3 {
+            font-size:24px;
+            margin-bottom: 20px;
+        }
+        .header .h_content .details p {
+            font-size:14px;
+            line-height: 24px;
+        }
+        .header .h_content .details>p {
+            margin-bottom: 90px;
+        }
+        .header .h_content .d_bom p {
+            line-height: 30px;
+        }
+        .header .h_content .d_bom p:last-child {
+            border-top:1px solid #ccc;
+            margin-top: 20px;
+            padding-top: 20px
+        }
+        /*头部下*/
+        .header .h_bottom {
+            width: 100%;
+            height: 350px;
+            padding-top: 35px;
+            box-sizing: border-box;
+            background-color: #f1f1f1;
+        }
+        .header .h_bottom .hb_cont {
+            width: 1200px;
+            height: 280px;
+            margin: 0 auto;
+            background-color: #fdfdfe;
+        }
+        /*头部下左*/
+        .header .h_bottom .hb_cont .hb_lt {
+            width: 540px;
+            height: 100%;
+            background-color: #fdfdfe;
+            float: left;
+            padding: 25px;
+            box-sizing: border-box;
+        }
+        .header .h_bottom .hb_cont .hb_lt  .hb_lt_t {
+            margin-bottom: 10px;
+        }
+        .header .h_bottom .hb_cont .oh5{
+            font-size: 20px;
+            color: #5c5c5c;
+        }
+        .header .h_bottom .hb_cont .hb_lt  .hb_lt_t span{
+            font-size: 15px;
+            color: #ff0c05;
+        }
+        .header .h_bottom .hb_cont .hb_lt  .hb_lt_c {
+            width: 200px;
+            height: 80px;
+            /*background-color: #21ffd5;*/
+            float: left;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .header .h_bottom .hb_cont .hb_lt  .hb_lt_c input{
+            margin-top: 25px;
+            float: left;
+        }
+        .header .h_bottom .hb_cont .hb_lt  .hb_lt_c .obd {
+            display: inline-block;
+            width: 52px;
+            height: 48px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+        .header .h_bottom .hb_cont .hb_lt  .hb_lt_c .obd img {
+            width: 45px;
+            display: block;
+        }
+        .header .h_bottom .hb_cont .hb_lt  .hb_lt_c p {
+            width: 52px;
+            height: 20px;
+            /*background-color: #fff;*/
+            /*display: inline-block;*/
+            text-align: center;
+            margin-left: 23px;
+            font-size:13px;
+        }
+        .header .h_bottom .hb_cont .hb_lt  .hb_lt_c2 {
+            width: 260px;
+            height: 80px;
+            /*background-color: #6422ff;*/
+            float: left;
+            padding:10px;
+            box-sizing: border-box;
+        }
+        .header .h_bottom .hb_cont .hb_lt .hb_lt_c2 span {
+            font-size:18px;
+            font-weight: 700;
+            font-family: "黑体";
+            color: #ef9c32;
+        }
+        .header .h_bottom .hb_cont .hb_lt .hb_lt_c2 p {
+            margin-top: 3px;
+            font-size:14px;
+            color: #403e3f;
+        }
+        .header .h_bottom .hb_cont .hb_lt .hb_lt_b button {
+            width: 82px;
+            height: 34px;
+            border-radius: 5px;
+            background-color: #ef9c32;
+            color: #fdfdfe;
+            font-size:14px;
+            margin-top: 25px;
+            cursor: pointer;
+        }
+        .header .h_bottom .hb_cont .hb_lt .hb_lt_b p {
+            display: inline-block;
+            margin-left:20px;
+            font-size:15px;
+            color: #403e3f;
+            font-family: "Arial";
+        }
+        .header .h_bottom .hb_cont .hb_lt .hb_lt_b span {
+            font-family: "Arial";
+            font-weight: 700;
+            color: #ef982a;
+            font-size:14px;
+        }
+        /*头部下右*/
+        .header .h_bottom .hb_cont .hb_rt {
+            width: 540px;
+            height: 100%;
+            float: left;
+            padding: 25px;
+            box-sizing: border-box;
+        }
+        .header .h_bottom .hb_cont .hb_rt .op {
+            font-size:13px;
+            margin-top: 3px;
+            color: #6e6e6e;
+        }
+        .header .h_bottom .hb_cont .hb_rt .pic {
+            margin-top: 20px;
+            width: 190px;
+            height: 135px;
+            display: inline-block;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .header .h_bottom .hb_cont .hb_rt .pic img {
+            width: 100%;
+        }
+        .header .h_bottom .hb_cont .hb_rt .pic span {
+            font-size:14px;
+            font-family: "幼圆";
+            display: block;
+            margin-top: 5px;
+            color: #403e3f;
+        }
+        /*网页中部*/
+        .middle{
+            width: 100%;
+            background-color: #fdfdfe;
+            overflow: hidden;
+        }
+        .middle .m_content {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        /*中部左*/
+        .middle .m_content .m_lt {
+            width: 720px;
+            float: left;
+            /*background-color: #ff9223;*/
+        }
+        .middle .m_content .m_lt .m_oul {
+            border-bottom: 1px solid #5d51ff;
+            width: 720px;
+            height: 49px;
+            margin-bottom: 15px;
+        }
+        .middle .m_content .m_lt .m_oul li{
+            float: left;
+            color: #403e3f;
+            font-size:20px;
+            margin: 15px 30px 5px 0;
+            height: 33px;
+            cursor: pointer;
+        }
+        .middle .m_content .m_lt .m_oul .m_oli{
+            color: #5d51ff;
+            border-bottom: 1px solid #5d51ff;
+        }
+        .middle .m_content .m_lt .m_show{
+            font-size:13px;
+            color: #403e3f;
+            display: none;
+            /*background-color: #ff4f4a;*/
+            text-align: left;
+            margin-top: 10px;
+        }
+        .middle .m_content .m_lt .m_show1{
+            display: block !important;
+        }
+        .middle .m_content .m_lt .m_div {
+            margin-bottom:16px;
+            margin-top: 20px;
+        }
+        .middle .m_content .m_lt .m_div span:first-child{
+            display: inline-block;
+            width: 53px;
+            height: 23px;
+            background-color: #0093c6;
+            text-align: center;
+            color: #f4f4f4;
+            font-family: "黑体";
+            line-height: 23px;
+            font-size:15px;
+            margin-right: 15px;
+        }
+        .middle .m_content .m_lt .m_div p {
+            display: inline-block;
+            font-size:16px;
+            font-weight: 600;
+        }
+        .middle .m_content .m_lt .m_div span:last-child {
+            display: inline-block;
+            width: 50px;
+            height: 22px;
+            font-size:14px;
+            line-height: 22px;
+            border: 1px solid #0093c6;
+            color: #0093c6;
+
+            text-align: center;
+            margin-left: 15px;
+            
+        }
+        .middle .m_content .m_lt .m_op {
+            font-size:14px;
+            text-indent: 70px;
+            color: #6e6e6e;
+
+        }
+        .middle .m_content .m_lt .m_show li {
+            margin-bottom: 15px;
+            font-size:14px;
+        }
+        .middle .m_content .m_lt .photo {
+            width: 100%;
+            margin-bottom:20px;
+        }
+        .middle .m_content .m_lt .photo:last-child {
+            margin-bottom: 55px;
+        }
+        .middle .m_content .m_lt .photo img {
+            display: block;
+            width: 100%;
+        }
+        /*中部右*/
+        .middle .m_content .m_rt {
+            width: 390px;
+
+            float: right;
+            text-align: center;
+        }
+        .middle .m_content .m_rt p:first-child{
+            width: 100%;
+            display: inline-block;
+            font-size:14px;
+            height: 35px;
+            margin: 15px 0 45px 0;
+            border-bottom: 1px solid #d0d0d0;
+            color: #272728;
+        }
+        .middle .m_content .m_rt>img {
+            width: 180px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .middle .m_content .m_rt p:nth-child(3) {
+            font-weight: 800;
+            font-size:18px;
+            margin: 13px 0 15px 0;
+        }
+        .middle .m_content .m_rt span:nth-child(4){
+            font-size:15px;
+            color: #323233;
+        }
+        .middle .m_content .m_rt .inside {
+            margin-top: 55px;
+            width: 390px;
+        }
+        .middle .m_content .m_rt .inside span{
+            display: inline-block;
+            font-size:19px;
+            font-weight: 600;
+            color: #272728;
+            /*background-color: #6f54ff;*/
+            width: 100%;
+            text-align: left;
+            text-indent: 1em;
+        }
+        .middle .m_content .m_rt .inside img {
+            margin-top: 20px;
+            width: 185px;
+            /*height: 185px;*/
+            float: left;
+            display: block;
+            cursor: pointer;
+        }
+        .middle .m_content .m_rt .inside img:first-child{
+            margin-right: 20px;
+        }
+        .middle .m_content .m_rt .inside p {
+            display: inline-block;
+            width: 100%;
+            border: 1px solid #4d4d4e;
+            height: 45px;
+            margin-top: 12px;
+            font-size:14px;
+            color: #4d4d4e;
+            line-height:45px;
+            cursor: pointer;
+        }
+        /*网页底部*/
+        .bottom {
+            width: 100%;
+            height: 120px;
+            background-color: #222222;
+        }
+        .bottom .b_content {
+            width: 1200px;
+            margin: 0 auto;
+            padding-top: 17px;
+        }
+        .bottom .b_content div {
+            display: inline-block;
+            float: left;
+        }
+        .bottom .b_content p {
+            font-size:14px;
+            line-height: 28px;
+            color: #8a8a8b;
+        }
+        .bottom .b_content img {
+            margin-top: 15px;
+            float: right;
+            cursor: pointer;
+        }
+        /*网页右边固定标签及回到顶部*/
+        .fix {
+            width: 70px;
+            background-color: #ff2955;
+            position: fixed;
+            right: 0;
+            bottom: 130px;
+            text-align: center;
+            color: white;
+        }
+        .fix .f_t {
+            padding-top: 15px;
+            background-color: #0082ca;
+            height: 85px;
+            box-sizing: border-box;
+        }
+        .fix span {
+            display: inline-block;
+        }
+        .fix img{
+            width: 40px;
+        }
+        .fix .f_b {
+            height: 45px;
+            background-color: #063650;
+            line-height: 23px;
+        }
+        .fix2 {
+            position: fixed;
+            right: 15px;
+            bottom: 20px;
+            display: none;
+        }
+        /*老师作品,点击小图显示大图*/
+        .divs {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .divs .cut {
+            width: 900px;
+            height: 600px;
+            background-color: #fff;
+            margin: 35px auto;
+            text-align: center;
+            padding-top: 10px;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+        .divs .cut ul {
+            width: 2700px;
+            height: 600px;
+            position: absolute;
+        }
+        .divs .cut ul li {
+            float: left;
+            width: 900px;
+            height: 600px;
+        }
+        .divs .cut ul li img {
+            width: 880px;
+            height: 580px;
+        }
+        .divs .cut:hover span{
+            opacity: 1;
+        }
+        .divs .cut ul li:nth-child(2) img{
+            margin-left: -14px;
+        }
+        .divs .cut span {
+            background: url("images/fancybox_sprite.png") no-repeat;
+            width: 36px;
+            height: 36px;
+            transition: 0.5s all;
+            opacity: 0;
+            position: absolute;
+        }
+        .divs .cut .close{
+            background-position: 0 0;
+            right: 8px;
+            top: 8px;
+        }
+        .divs .cut span:nth-of-type(2){
+            background-position: 0 -36px;
+            left: 8px;
+            top: 50%;
+        }
+        .divs .cut span:nth-of-type(3){
+            background-position: 0 -72px;
+            right: 8px;
+            top: 50%;
+        }
+    </style>
+</head>
+<body>
+<!--网页上部-->
+<div class="header"]>
+    <!--头部上-->
+    <div class="h_header">
+        <!--logo-->
+        <h1>
+            <img src="images/logonew.png" alt="" title="王国绘画学院">
+        </h1>
+        <!--ul列表-->
+        <div class="h_menu">
+            <ul>
+                <li><a href="">首页</a></li>
+                <li><a href="">名师直播课</a></li>
+                <li><a href="">录播课</a></li>
+                <li><a href="">分享会</a></li>
+                <li><a href="">学院作品</a></li>
+                <li><a href="">社区</a></li>
+                <li><a href="">插画资源分享</a></li>
+            </ul>
+        </div>
+        <!--头部右边的a标签,登录/注册-->
+        <div class="h_btn">
+            <span><a href="login/login.html">登录</a></span>
+            <span><a href="login/login.html">注册</a></span>
+        </div>
+    </div>
+    <!--头部中-->
+    <div class="h_content">
+        <!--蒙版及文字-->
+        <div class="details">
+            <h3>灵感创作班 - 找寻自己的插画风格</h3>
+            <p>适合有一定绘画基础，想进行个人创作，但又不知道从什么方面入手或者不知道怎么完善自己画面的同学。课程包括风格引导，人物创作，背景创作，后期画面处理，绘本漫画的了解，通过这些课程就可以了解到一张完整的创作是怎么完成的。课程的特色是会对每个同学单独引导，课程包含修改作业的部分。</p>
+            <div class="d_bom">
+                <p>课程学时 ：8节课(24课时)</p>
+                <p>授课方式 ：高清1080P互动直播</p>
+                <p>课程人数 ：50人以上即可开课</p>
+                <p>课程原价 : 1080元</p>
+            </div>
+        </div>
+    </div>
+    <!--头部下-->
+    <div class="h_bottom">
+        <div class="hb_cont">
+            <!--模块:最新课程排期-->
+            <div class="hb_lt">
+                <div class="hb_lt_t">
+                    <h5 class="oh5">最新课程排期</h5>
+                    <span>tips:请根据自己合适的时间选择课程</span>
+                </div>
+                <div class="hb_lt_c">
+                    <input type="radio">
+                    <div class="obd">
+                        <img src="images/20140316194419667491143.jpg" alt="">
+                    </div>
+                    <p>舞小仙</p>
+                </div>
+                <div class="hb_lt_c2">
+                    <span>第3期</span>
+                    <p>2018年预定中</p>
+                    <p>周六19:00-22:00周日19:00-22:00</p>
+                </div>
+                <div class="hb_lt_b">
+                    <button>立即订购</button>
+                    <p>了解更多请咨询QQ:</p>
+                    <span>800014942</span>
+                </div>
+            </div>
+            <!--模块:附录播课程-->
+            <div class="hb_rt">
+                <h5 class="oh5">附录播课程</h5>
+                <p class="op">购买本套课程即可获得以下录播课程</p>
+                <div class="pic">
+                    <img src="images/147550180217943%20(1).jpg" alt="">
+                    <p class="op">总课程:21节</p>
+                    <span class="ospan">SAI绘画软件基础</span>
+                </div>
+                <div class="pic">
+                    <img src="images/147550166639176.jpg" alt="">
+                    <p class="op">总课程:31节</p>
+                    <span class="ospan">PS绘画软件基础</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--网页中部-->
+<div class="middle">
+    <div class="m_content">
+        <!--中部左-->
+        <div class="m_lt">
+            <ul class="m_oul">
+                <li class="m_oli">课程概述</li>
+                <li>课程目录</li>
+            </ul>
+            <!--课程概述:详细信息-->
+            <div class="m_show m_show1">
+                <ul>
+                    <li>
+                        <p></p>
+                        在画画中如何“更自在的表达自己”是一个漫长艰辛的学习过程，每个阶段迷茫的东西，需要了解的东西都是不一样的，有一方面的完善需要通过自身的努力和摸索，另外一方面的东西的获得需要依靠外界的引导，希望通过这个课程对喜爱创作的人有一定的帮助，也希望每个人都能找到适合自己的方式。</li>
+                    <li>课程包含的点有插画构图，透视，色彩搭配，光影，画面调色，后期处理等</li>
+                    <li>第一课 —— 寻找并确立创作中的世界观</li>
+                    <li>第二课 —— 主体人物的完善和深入</li>
+                    <li>第三课 —— 插画背景绘制</li>
+                    <li>第四课 —— 人物和场景的融合</li>
+                    <li>第五课 —— 创作中的色彩搭配</li>
+                    <li>第六课 —— 画面的昼与夜</li>
+                    <li>第七课 —— 绘本与漫画</li>
+                    <li>第八课 —— 结课</li>
+                    <li>更详细课程内容安排请点击课程目录</li>
+                </ul>
+                <div class="photo">
+                    <img src="images2/1.jpg" alt="">
+                </div>
+                <div class="photo">
+                    <img src="images2/9.jpg" alt="">
+                </div>
+                <div class="photo">
+                    <img src="images2/3.jpg" alt="">
+                </div>
+                <div class="photo">
+                    <img src="images2/4.jpg" alt="">
+                </div>
+                <div class="photo">
+                    <img src="images2/5.jpg" alt="">
+                </div>
+                <div class="photo">
+                    <img src="images2/6.jpg" alt="">
+                </div>
+                <div class="photo">
+                    <img src="images2/7.jpg" alt="">
+                </div>
+                <div class="photo">
+                    <img src="images2/8.jpg" alt="">
+                </div>
+                <div class="photo">
+                    <img src="images2/2.jpg" alt="">
+                </div>
+            </div>
+            <!--课程目录:详细信息-->
+            <div class="m_show">
+                <ul>
+                    <li>
+                        <div class="m_div">
+                            <span>1</span>
+                            <p>寻找并确立创作中的世界观（明确个人插画风格）</p>
+                            <span>直播</span>
+                        </div>
+                        <p class="m_op">A．课前作业点评，引导明确个人风格。</p>
+                        <p class="m_op">B．创作灵感的来源。</p>
+                        <p class="m_op">C．布置作业，设计出自己的主体人物。</p>
+                    </li>
+                    <li>
+                        <div class="m_div">
+                            <span>2</span>
+                            <p>主体人物的完善和深入</p>
+                            <span>直播</span>
+                        </div>
+                        <p class="m_op">A．点评作业。</p>
+                        <p class="m_op">B．不同风格的人物示范。</p>
+                    </li>
+                    <li>
+                        <div class="m_div">
+                            <span>3</span>
+                            <p>插画背景绘制 </p>
+                            <span>直播</span>
+                        </div>
+                        <p class="m_op">A.空间与层次。</p>
+                        <p class="m_op">B.场景素材的参考和应用。</p>
+                        <p class="m_op">C.背景示范。</p>
+                    </li>
+                    <li>
+                        <div class="m_div">
+                            <span>4</span>
+                            <p>寻找并确立创作中的世界观（明确个人插画风格）</p>
+                            <span>直播</span>
+                        </div>
+                        <p class="m_op">日常插画示范</p>
+                    </li>
+                    <li>
+                        <div class="m_div">
+                            <span>5</span>
+                            <p>创作中的色彩搭配</p>
+                            <span>直播</span>
+                        </div>
+                        <p class="m_op">A．色彩原理</p>
+                        <p class="m_op">B．赏析不同插画中的色彩搭配</p>
+                    </li>
+                    <li>
+                        <div class="m_div">
+                            <span>6</span>
+                            <p>画面的昼与夜</p>
+                            <span>直播</span>
+                        </div>
+                        <p class="m_op">A.PS后期调色工具的使用</p>
+                        <p class="m_op">B. 色调和光影对画面氛围的影响</p>
+                    </li>
+                    <li>
+                        <div class="m_div">
+                            <span>7</span>
+                            <p>绘本与漫画</p>
+                            <span>直播</span>
+                        </div>
+                        <p class="m_op">A.分享绘本漫画创作经验</p>
+                        <p class="m_op">B.示范故事小条漫</p>
+                    </li>
+                    <li>
+                        <div class="m_div">
+                            <span>8</span>
+                            <p>结课</p>
+                            <span>直播</span>
+                        </div>
+                        <p class="m_op">A．学生作业的修改和完善。</p>
+                        <p class="m_op">B．解答大家提出的问题。</p>
+                        <p class="m_op">C．课程结束后会单独指导有需要的同学。</p>
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+        <!--中部右-->
+        <div class="m_rt">
+            <p>讲师介绍</p>
+            <img src="images/20140316194419667491143.jpg" alt="">
+            <p>舞小仙</p>
+            <span>最世文化签约插画师</span>
+            <div class="inside">
+                <span>老师作品</span>
+                <div>
+                    <img src="images/148161976159262.jpg" alt="">
+                    <img src="images/145433016476161.jpg" alt="">
+                </div>
+                <p>更多</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--网页下部-->
+<div class="bottom">
+    <div class="b_content">
+        <div>
+            <p>学插画咨询QQ：800014942</p>
+            <p>涂鸦王国 公司 插画分享</p>
+            <p>粤ICP备14040925号-1</p>
+        </div>
+        <img src="images/sm_124x47.png" alt="">
+    </div>
+</div>
+<!--网页右边固定标签-->
+<div class="fix">
+    <div class="f_t">
+        <img src="images/qq.png" alt="">
+        <span>在线咨询</span>
+    </div>
+    <div class="f_b">
+        <span>绘画学院</span>
+        <span>官方微博</span>
+    </div>
+</div>
+<!--回到顶部-->
+<div class="fix2">
+    <img src="images/top.png" alt="">
+</div>
+<!--老师作品,点击小图显示大图-->
+<div class="divs">
+    <div class="cut">
+        <ul class="oulst">
+            <li class="liset">
+                <img src="images/w.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/148506490352744.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/w.jpg" alt="">
+            </li>
+        </ul>
+        <span class="close"></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<script>
+    $(function () {
+        //点击课程概述/课程目录时显示对应的详细内容
+        $(".m_oul li").click(function () {
+            $(this).addClass("m_oli").siblings().removeClass("m_oli");
+            var index = $(this).index();
+            $(".m_show").eq(index).addClass("m_show1").siblings().removeClass("m_show1")
+        })
+
+        //老师作品:点击小图显示大图
+        var H = $(".divs");
+        $(".inside img").click(function () {
+            $(H).css({
+                "display" :"block"
+            })
+        })
+        //老师作品:点击了关闭标签,让整个div做动画隐藏
+        $(".close").click(function() {
+            $(this).parents(".divs").fadeOut(300)
+        });
+        //老师作品,点击按钮后,让图片往左/往右移动
+        var index = 0;
+        //点击了左边按钮
+        $(".divs span:eq(1)").click(function () {
+                index ++;
+            if(index > 2){
+                index = 1;
+                $(".divs ul").css({
+                    "left":0
+                })
+            }
+            //ul往左做动画移动
+            $(".divs ul").stop().animate({
+                "left" : -(index*900)
+            })
+        });
+        //点击了右边按钮
+        $(".divs span:eq(2)").click(function () {
+            index --;
+            if(index <0){
+                index = 1;
+                $(".divs ul").css({
+                    "left":-1800
+                })
+            }
+            //ul往左做动画移动
+            $(".divs ul").stop().animate({
+                "left" : -(index*900)
+            })
+        });
+
+        //监听鼠标滚动事件,滚动到一定距离,显示标签,点击标签后,做动画回到网页顶部
+        $(window).on("scroll", function () {
+            var top = $(window).scrollTop();
+            if (top > 600) {
+                $(".fix2").css({
+                    "display": "block"
+                })
+            } else {
+                $(".fix2").css({
+                    "display": "none"
+                })
+            }
+            $(".fix2").click(function () {
+                $("html,body").stop().animate({
+                    scrollTop : 0
+                },500)
+            })
+        })
+
+
+    })
+</script>
+</body>
+</html>
