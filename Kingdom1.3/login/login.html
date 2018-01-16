@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/jquery-3.2.1.js"></script>
+</head>
+<body>
+<!--头部-->
+<div class="pageTop">
+    <div class="pageTop-back">
+        <!--logo图标-->
+        <a href="" style="float: left;margin-top: 10px;" title="涂鸦王国">
+            <img src="images/logonew.png" style="height: 28px">
+        </a>
+        <!--导航-->
+        <div class="pageTop-nav">
+            <ul>
+                <li><a href="">作品</a></li>
+                <li><a href="">作者</a></li>
+                <li><a href="">活动</a></li>
+                <li><a href="">客户端</a></li>
+                <li><a href="">更多</a></li>
+                <li><a href="" id="bianse">王国插画课程</a></li>
+            </ul>
+        </div>
+        <!--登录-->
+        <div class="pageTop-login">
+            <a href="">注册</a>
+            <a href="">登录</a>
+        </div>
+    </div>
+</div>
+<!--登录界面-->
+<form class="content" method="post">
+    <div class="loginForm">
+        <div class="padd-top">
+            <div class="form-group">
+                <p class="op" >手机号</p>
+                <input type="text" placeholder="请输入11位手机号..." class="form-control" id="email"><span class="input-top"></span>
+
+            </div>
+            <div class="form-group">
+                <p class="op" >密码</p>
+                <input type="password" placeholder="请输入密码..." class="form-control" id="password"><br>
+            <span class="input-buttom">
+        </span>
+            </div>
+        </div>
+        <button class="btn">
+            <span class="spanl"></span>
+            <span class="spanr"></span>
+            点击此处进行人机识别</button>
+        <button class="obtn">登录</button>
+        <div class="zhuce"><a href="#">注册新账号 </a></div>
+        <p></p>
+        <div class="mima"><a href="#">忘记密码</a></div>
+    </div>
+    <div class="shejiao">使用社交账号登录</div>
+</form>
+<!--正则表达式-->
+<script>
+    $(function () {
+        $("input").bind("input propertychange",function () {
+            var reg = new RegExp("^[1][3,4,5,7,8][0-9]{9}$");
+            //判断input框中的值是否符合正则表达式
+            if (reg.test($(".form-control").val())) {
+                $(".input-top").text("符合格式")
+            }
+            else {
+                $(".input-top").text("请输入正确的手机号")
+            }
+
+        })
+
+        /* $("input").bind("input propertychange",function () {
+         var reg = new RegExp("^[A-Za-z0-9]{4,17}$");
+         //判断input框中的值是否符合正则表达式
+         if (reg.test($("#password").val())) {
+         $(".input-buttom").text("")
+         }
+         else {
+         $(".input-butttom").text("必须由英文或数字组成，长度在5到18之间")
+         }
+         })*/
+        $(".pageTop-nav li").mouseenter(function () {
+            $(this).addClass("current").siblings().removeClass("current")
+        })
+    })
+</script>
+
+</body>
+</html>

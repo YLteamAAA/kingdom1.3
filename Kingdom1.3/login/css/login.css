@@ -1,0 +1,185 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset,  textarea, p, blockquote, th, td, span {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+body {
+    font-size: 12px;
+    font-family: "Microsoft YaHei", "微软雅黑", "Arial", "黑体", "宋体", sans-serif;
+    background: #ececec;
+}
+ul, li {
+    list-style: none;
+}
+fieldset, img, html,body, iframe {
+    border: 0;
+}  h1, h2, h3, h4, h5, h6, em, strong, b, i {
+       font-style: normal;
+       font-size: 100%;
+       font-weight: normal;
+   }
+textarea, a,  select {
+    outline: none;
+    font-size: 14px;
+    border: 0;
+    text-decoration: none;
+    color: #ddd;
+}
+/*头部样式*/
+.pageTop{
+    height: 50px;
+    background-color: #1B1B1B;
+    position: relative;
+}
+.pageTop .pageTop-back{
+    width: 1130px;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+/*导航*/
+.pageTop-nav ul{
+    float: left;
+    margin-left: 25px;
+}
+.pageTop-nav ul li{
+    display: block;
+    padding-left: 28px;
+    padding-right: 28px;
+    text-align: center;
+    float: left;
+    position: relative;
+    height: 50px;
+    margin-left: -1px;
+    line-height: 50px;
+}
+.pageTop-nav ul li a#bianse{
+    color: #ffb61b;
+}
+/*登录*/
+.pageTop-login{
+    position: absolute;
+    right: 0;
+    top:0;
+    line-height: 50px;
+}
+.pageTop-login a{
+    color: #ccc;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+/*主体*/
+.content{
+    width: 400px;
+    height: 460px;
+    background-color: #fff;
+    margin: 80px auto;
+
+}
+.content .padd-top{
+    padding-top:10px;
+}
+.content .loginForm .padd-top input{
+    text-indent: 6px;
+    font-size:12px;
+    color: #333333;
+}
+.content .loginForm .padd-top .form-group .input-top,.input-buttom{
+    display: inline-block;
+    text-indent: 30px;
+    margin-top: 5px;
+    color: #737373;
+}
+
+.content .form-group .op{
+    font-size:13px;
+    text-indent: 30px;
+    margin-top: 15px;
+    color: #333333;
+}
+.content .form-group .form-control{
+    width: 340px;
+    height: 30px;
+    margin-top: 5px;
+    margin-left: 30px;
+}
+.content .loginForm .btn, .obtn{
+    display: inline-block;
+    width: 344px;
+    height: 38px;
+    margin-left:30px;
+    margin-top: 15px;
+    background-color: #007bff;
+    color:white;
+    border: none;
+    font-size: 16px;
+}
+.content .loginForm .btn{
+    width: 344px;
+    height: 38px;
+    margin-left:30px;
+    font-size:13px;
+    color: #858585;
+    background-color: rgba(204, 204, 204,0.5);
+}
+.content .loginForm .btn .spanl{
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    float: left;
+    margin-left: 20px;
+    background: url("../images/rl.png")  -23px 0px no-repeat;
+}
+.content .loginForm .btn .spanr{
+    display: inline-block;
+    width: 16px;
+    height: 17px;
+    float: right;
+    margin-right: 30px;
+    background: url("../images/rl.png")  -46px -29px no-repeat;
+}
+
+.content .loginForm .zhuce{
+    /*display: inline-block;*/
+    width: 344px;
+    height: 38px;
+    margin-left: 30px;
+    font-size: 14px;
+    color: #070707;
+    background-color: #f3f3f3;
+    text-align: center;
+    line-height: 38px;
+    margin-top: 20px;
+}
+.content .loginForm .mima{
+    width: 344px;
+    height: 38px;
+    margin-left: 30px;
+    font-size: 14px;
+    color: #070707;
+    background-color: #f3f3f3;
+    text-align: center;
+    line-height: 38px;
+    margin-top: 20px;
+
+}
+.content .loginForm .zhuce:hover{
+    color: white;
+    background-color: #b1b1b1;
+}
+.content .loginForm .mima:hover{
+    color: white;
+    background-color: #b1b1b1;
+}
+.content .loginForm a{
+    color: #282828;
+}
+.shejiao{
+    margin-top: 10px;
+    text-indent: 30px;
+    color: #888888;
+}
+.current {
+    background-color: black;
+}
